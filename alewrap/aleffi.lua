@@ -13,7 +13,7 @@ local ffi = require 'ffi'
 -- We let the ale::ALEInterface to look like a C struct.
 ffi.cdef("typedef struct ALEInterface ALEInterface;")
 ffi.cdef(readContent(paths.thisfile("alewrap_core.h")))
-local lib = ffi.load(package.searchpath('libalewrap',package.cpath))
+local lib = ffi.load(assert(package.searchpath('libalewrap',package.cpath)))
 
 -- Defining the metatable for ALEInterface userdata.
 local mt = {}
