@@ -1,5 +1,7 @@
 
-require 'torchffi'
+if not torch.data then
+    require 'torchffi'
+end
 
 function alewrap.createEnv(romName, extraConfig)
     return alewrap.AleEnv(romName, extraConfig)
